@@ -22,8 +22,8 @@ on:
 
 
 jobs:
-  build:
-    runs-on: ubuntu-last
+  run:
+    runs-on: ubuntu-20.04
 
     steps:
     - name: Checkout
