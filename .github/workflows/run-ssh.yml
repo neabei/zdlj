@@ -48,7 +48,7 @@ jobs:
         mkdir lean
         cd lean
         git init
-        git remote add origin https://github.com:coolsnowwolf/lede.git
+        git remote add origin https://github.com/coolsnowwolf/lede.git
         git config core.sparsecheckout true
         echo "package/lean" >> .git/info/sparse-checkout
         #   git pull origin master
