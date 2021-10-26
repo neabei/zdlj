@@ -44,7 +44,13 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-
+        cd /workdir
+        git init
+        git remote add origin git@github.com:coolsnowwolf/lede.git
+        git config core.sparsecheckout true
+        echo "package/lean" >> .git/info/sparse-checkout
+        git pull --depth 1 origin master
+      
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
